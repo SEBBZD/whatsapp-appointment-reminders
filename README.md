@@ -1,1 +1,33 @@
-# whatsapp-appointment-reminders
+# WhatsApp Appointment & Renewal Reminders
+
+Sistema automatizado para enviar recordatorios de citas, servicios o renovaciones por **WhatsApp Business Cloud API (Meta)** a partir de hojas de cálculo, evitando ausencias de última hora y reduciendo el seguimiento manual.
+
+---
+
+## Problema de Negocio que Resuelve
+
+En negocios como clínicas odontológicas, centros estéticos, talleres mecánicos, veterinarias o agencias de servicios, una cita no asistida o una renovación olvidada representa pérdida directa de ingresos y horas operativas desperdiciadas.
+
+Este sistema automatiza el ciclo diario de recordatorios:
+1. Lee la agenda o base de clientes desde una hoja de cálculo (`clientes_demo.xlsx` / Google Sheets).
+2. Filtra automáticamente los registros programados para la ventana configurada (por defecto, citas de mañana con `DAYS_AHEAD=1`).
+3. Normaliza números telefónicos al formato internacional (incluyendo prefijo `57` para líneas móviles de Colombia).
+4. Envía el mensaje mediante plantilla oficial de **WhatsApp Business Cloud API** (con soporte para modo simulación `dry_run=True` en pruebas).
+5. Actualiza el estado (`Enviado`) y la marca de tiempo (`ultimo_envio`) para evitar envíos duplicados.
+
+---
+
+## Arquitectura del Proyecto
+
+```text
+whatsapp-appointment-reminders/
+├── README.md
+├── .env.example
+├── data/
+│   └── clientes_demo.xlsx
+└── python-engine/
+    ├── config.py           # Carga y validación de variables de entorno
+    ├── sheets_handler.py   # Lectura, filtrado por fecha, normalización y guardado
+    ├── whatsapp_client.py  # Cliente HTTP para Meta WhatsApp Cloud API + modo simulación
+    ├── main.py             # Orquestador del flujo diario
+    └── requirements.txt    # Dependencias del proyecto
