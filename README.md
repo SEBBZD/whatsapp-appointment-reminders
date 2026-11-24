@@ -31,33 +31,43 @@ whatsapp-appointment-reminders/
     ├── whatsapp_client.py  # Cliente HTTP para Meta WhatsApp Cloud API + modo simulación
     ├── main.py             # Orquestador del flujo diario
     └── requirements.txt    # Dependencias del proyecto
-⚙️ Instalación y Prueba Local
-Clonar el repositorio:
+```
 
-Bash
-git clone [https://github.com/SEBBZD/whatsapp-appointment-reminders.git](https://github.com/SEBBZD/whatsapp-appointment-reminders.git)
-cd whatsapp-appointment-reminders
-Instalar dependencias:
+---
 
-Bash
-pip install -r python-engine/requirements.txt
-Configurar variables de entorno:
-Copia .env.example a un archivo .env en la raíz y ajusta los parámetros según tu entorno.
+## ⚙️ Instalación y Prueba Local
 
-Ejecutar en modo simulación (dry_run=True):
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/SEBBZD/whatsapp-appointment-reminders.git](https://github.com/SEBBZD/whatsapp-appointment-reminders.git)
+   cd whatsapp-appointment-reminders
+   ```
 
-Bash
-python python-engine/main.py
-🔌 Escalabilidad y Enfoque Comercial
-Producción con n8n: Este mismo flujo puede orquestarse de forma visual en n8n conectando nodos de Schedule Trigger, Google Sheets y WhatsApp Business Cloud, ideal para clientes que requieren panel visual y monitoreo continuo.
+2. **Instalar dependencias:**
+   ```bash
+   pip install -r python-engine/requirements.txt
+   ```
 
-Personalización por cliente: Se adapta a recordatorios de citas médicas, mantenimientos preventivos, cobros preventivos o renovaciones de suscripciones/pólizas.
+3. **Configurar variables de entorno:**
+   Copia `.env.example` a un archivo `.env` en la raíz y ajusta los parámetros según tu entorno.
 
-Autor
-Juan Sebastián García — Backend & Automation Developer
+4. **Ejecutar en modo simulación (`dry_run=True`):**
+   ```bash
+   python python-engine/main.py
+   ```
 
-📍 Bogotá, Colombia
+---
 
-✉️ sebastiangc301@gmail.com
+##  Escalabilidad y Enfoque Comercial
 
-🔗 LinkedIn: https://www.linkedin.com/in/juan-sebastian-garcia-dev
+* **Producción con n8n:** Este mismo flujo puede orquestarse de forma visual en **n8n** conectando nodos de *Schedule Trigger*, *Google Sheets* y *WhatsApp Business Cloud*, ideal para clientes que requieren panel visual y monitoreo continuo.
+* **Personalización por cliente:** Se adapta a recordatorios de citas médicas, mantenimientos preventivos, cobros preventivos o renovaciones de suscripciones/pólizas.
+
+---
+
+##  Autor
+
+**Juan Sebastián García** — Backend & Automation Developer  
+📍 Bogotá, Colombia  
+✉️ sebastiangc301@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/juan-sebastian-garcia-dev)
